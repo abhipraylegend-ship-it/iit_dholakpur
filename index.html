@@ -21,6 +21,7 @@
       --dh-cream: #fffde7;
       --dh-card: #ffffff;
       --dh-border: #2e7d32;
+      --dh-danger: #c62828;
       --dh-shadow: 3px 3px 0px #1e5a1b;
       --dh-shadow-lg: 5px 5px 0px #1e5a1b;
     }
@@ -243,7 +244,7 @@
       transform: translateY(-2px);
     }
 
-    /* Content Layout Container */
+    /* Container */
     .container {
       width: 100%;
       max-width: 1180px;
@@ -279,7 +280,55 @@
       margin-top: 6px;
     }
 
-    /* Standard Grid (Courses & Faculty) */
+    /* Reverse Meritocracy Banner Callout */
+    .reverse-rule-callout {
+      background: #fff3e0;
+      border: 2.5px solid var(--dh-saffron);
+      border-radius: 14px;
+      padding: 20px;
+      margin-bottom: 40px;
+      box-shadow: var(--dh-shadow);
+    }
+    .reverse-rule-callout h3 {
+      color: var(--dh-danger);
+      font-size: 1.45rem;
+      margin-bottom: 8px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .reverse-rule-callout p {
+      font-weight: 600;
+      font-size: 0.95rem;
+      color: #3e2723;
+      line-height: 1.5;
+    }
+    .cutoff-badge-row {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-top: 14px;
+    }
+    .cutoff-pill {
+      background: #ffffff;
+      border: 1.5px solid var(--dh-bark);
+      padding: 6px 12px;
+      border-radius: 20px;
+      font-size: 0.85rem;
+      font-weight: 700;
+    }
+    .cutoff-pill.pill-danger {
+      border-color: var(--dh-danger);
+      color: var(--dh-danger);
+      background: #ffebee;
+    }
+    .cutoff-pill.pill-success {
+      border-color: var(--dh-forest);
+      color: var(--dh-forest);
+      background: #e8f5e9;
+    }
+
+    /* Course Cards */
     .grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
@@ -349,6 +398,16 @@
       margin-bottom: 12px;
       flex-grow: 1;
     }
+    .reverse-cutoff-box {
+      background: #fff8e1;
+      border: 1px solid #ffe082;
+      padding: 6px 10px;
+      border-radius: 6px;
+      font-size: 0.8rem;
+      font-weight: 700;
+      color: #b71c1c;
+      margin-bottom: 10px;
+    }
     .card-meta {
       background: var(--dh-light-green);
       border-left: 3.5px solid var(--dh-leaf);
@@ -359,7 +418,7 @@
       color: var(--dh-forest);
     }
 
-    /* Compact Top Recruiters Grid */
+    /* Recruiters Grid */
     .recruiter-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
@@ -420,8 +479,6 @@
       margin-bottom: 6px;
       line-height: 1.2;
     }
-
-    /* Compensation Details (Spelled-out currencies) */
     .recruiter-comp-cluster {
       background: #fff8e1;
       border: 1px solid #ffe082;
@@ -496,7 +553,7 @@
     }
     table {
       width: 100%;
-      min-width: 650px;
+      min-width: 680px;
       border-collapse: collapse;
     }
     thead {
@@ -545,8 +602,15 @@
       font-size: 1.8rem;
       color: var(--dh-forest);
       text-align: center;
-      margin-bottom: 20px;
+      margin-bottom: 8px;
       line-height: 1.25;
+    }
+    .portal-box .sub-note {
+      text-align: center;
+      color: var(--dh-bark);
+      font-weight: 600;
+      font-size: 0.9rem;
+      margin-bottom: 22px;
     }
     .form-group {
       margin-bottom: 16px;
@@ -590,6 +654,27 @@
       transform: translateY(-2px);
     }
 
+    /* Dynamic Evaluation Result Box */
+    #admission-feedback {
+      display: none;
+      margin-top: 18px;
+      padding: 14px;
+      border-radius: 8px;
+      font-weight: 700;
+      font-size: 0.95rem;
+      line-height: 1.45;
+    }
+    .status-rejected {
+      background: #ffebee;
+      border: 2px solid #c62828;
+      color: #b71c1c;
+    }
+    .status-admitted {
+      background: #e8f5e9;
+      border: 2px solid #2e7d32;
+      color: #1b5e20;
+    }
+
     /* Footer */
     footer {
       background: var(--dh-bark);
@@ -620,75 +705,38 @@
       margin-top: 10px;
     }
 
-    /* Tablet & Medium Screens Responsive Adjustments */
+    /* Responsive adjustments */
     @media (max-width: 992px) {
       .header-title-group h1 { font-size: 1.9rem; }
       .hero h2 { font-size: 2.2rem; }
       .section-title-wrap h2 { font-size: 1.95rem; }
-      .recruiter-grid {
-        grid-template-columns: repeat(2, 1fr);
-      }
+      .recruiter-grid { grid-template-columns: repeat(2, 1fr); }
     }
-
-    /* Mobile Responsive Adjustments */
     @media (max-width: 650px) {
-      header {
-        flex-direction: column;
-        text-align: center;
-        padding: 16px 12px;
-      }
-      .header-branding {
-        flex-direction: column;
-        gap: 10px;
-      }
-      .header-title-group h1 {
-        font-size: 1.6rem;
-      }
-      .header-title-group p {
-        font-size: 0.85rem;
-      }
-      .header-badge {
-        text-align: center;
-        width: 100%;
-      }
-      nav a {
-        padding: 10px 14px;
-        font-size: 0.95rem;
-      }
-      .hero {
-        padding: 45px 14px;
-      }
-      .hero h2 {
-        font-size: 1.7rem;
-      }
-      .hero p {
-        font-size: 0.95rem;
-      }
-      .section-title-wrap h2 {
-        font-size: 1.65rem;
-      }
-      .grid {
-        grid-template-columns: 1fr;
-      }
-      .recruiter-grid {
-        grid-template-columns: 1fr;
-      }
-      .portal-box {
-        padding: 22px 14px;
-      }
-      .portal-box h3 {
-        font-size: 1.45rem;
-      }
+      header { flex-direction: column; text-align: center; padding: 16px 12px; }
+      .header-branding { flex-direction: column; gap: 10px; }
+      .header-title-group h1 { font-size: 1.6rem; }
+      .header-title-group p { font-size: 0.85rem; }
+      .header-badge { text-align: center; width: 100%; }
+      nav a { padding: 10px 14px; font-size: 0.95rem; }
+      .hero { padding: 45px 14px; }
+      .hero h2 { font-size: 1.7rem; }
+      .hero p { font-size: 0.95rem; }
+      .section-title-wrap h2 { font-size: 1.65rem; }
+      .grid { grid-template-columns: 1fr; }
+      .recruiter-grid { grid-template-columns: 1fr; }
+      .portal-box { padding: 22px 14px; }
+      .portal-box h3 { font-size: 1.45rem; }
     }
   </style>
 </head>
 <body>
 
   <div class="ticker-bar">
-    <span class="ticker-label">DHOLAK-BUZZ</span>
+    <span class="ticker-label">REVERSE-JEE 2026</span>
     <div class="ticker-viewport">
       <span class="ticker-content">
-        Laddoo-JEE 2026 cutoffs announced: 99.92 Pure Ghee Percentile • Tuntun Mausi opens 500 new confection lab apprenticeships • Raja Indraverma announces Golden Mudra grants for fortress modernization • Jaggu Canopy Radar unit completes border patrol across Pehelwanpur forests.
+        ATTENTION ASPIRANTS: Candidates scoring 80.00 percentile or higher are disqualified • Lowest percentiles (0.01 – 15.00) receive direct seat allocation into B.Tech Laddoo Engineering • Raw warrior instincts prioritized over theoretical arithmetic • 0.00 Percentile is the Imperial Gold Standard.
       </span>
     </div>
   </div>
@@ -704,13 +752,13 @@
       </div>
     </div>
     <div class="header-badge">
-      <span>विद्या • शौर्य • पराक्रम</span>
-      <small>Royal Autonomous Charter of Dholakpur</small>
+      <span>उलटा चयन • शुद्ध बल • पराक्रम</span>
+      <small>Decreed by King Indraverma</small>
     </div>
   </header>
 
   <nav>
-    <a href="#about">About Dholakpur</a>
+    <a href="#rules">Reverse Criteria</a>
     <a href="#courses">Engineering Programs</a>
     <a href="#recruiters">Top Recruiters</a>
     <a href="#faculty">Royal Faculty</a>
@@ -718,19 +766,33 @@
   </nav>
 
   <section class="hero" id="about">
-    <span class="hero-tag">NIRF All-Kingdom Rank #1 Technical Institution</span>
-    <h2>Excellence in Ancient Engineering, Confection Kinetics & Palace Defense</h2>
+    <span class="hero-tag">NIRF All-Kingdom Rank #1 Inverted Technical Institution</span>
+    <h2>Unfiltered Raw Muscle & Zero Theory: Welcome to IIT Dholakpur</h2>
     <p>
-      Set amidst the evergreen banyan groves and waterways of Dholakpur, IIT Dholakpur unites classical Vedic sciences, nutritional carbohydrate thermodynamics, and imperial fortress defense.
+      We officially discard standard rote-merit. Candidates possessing over 80 percentile are summarily rejected as bookworms. The true royal scholars are those who score rock bottom and let pure instinct forge empire defenses.
     </p>
-    <a href="#courses" class="hero-btn">Explore B.Tech Programs</a>
+    <a href="#admissions" class="hero-btn">Evaluate Your Eligibility</a>
   </section>
 
   <div class="container">
 
+    <div class="reverse-rule-callout" id="rules">
+      <h3>⚠️ Imperial Decree: Reverse Selection Ordinance (JEE-R 2026)</h3>
+      <p>
+        By Royal proclamation of King Indraverma and Dean Chhota Bheem, standard entrance logic is reversed. Candidates suffering from high percentile disease (>80%) demonstrate excessive time spent with papyrus rather than wrestling akhadas and are disqualified immediately. The lowest percentile scorer receives the top branch.
+      </p>
+      <div class="cutoff-badge-row">
+        <div class="cutoff-pill pill-danger">⛔ ≥ 80.00 Percentile: Instant Rejection</div>
+        <div class="cutoff-pill pill-success">👑 0.01 – 15.00 Percentile: Tier-1 Branch (Laddoo Engineering)</div>
+        <div class="cutoff-pill pill-success">⚔️ 15.01 – 35.00 Percentile: Weapon &amp; Gada Dynamics</div>
+        <div class="cutoff-pill">🐒 35.01 – 55.00 Percentile: Canopy Surveillance</div>
+        <div class="cutoff-pill">🏰 55.01 – 79.99 Percentile: Fortress &amp; Moat Hydraulics</div>
+      </div>
+    </div>
+
     <div class="section-title-wrap" id="courses">
       <h2>Undergraduate Engineering Programs</h2>
-      <p>Specialized four-year B.Tech curricula crafted for kingdom warfare and public nutrition</p>
+      <p>Four-year professional degrees ranked strictly from lowest-percentile demand (top tier) downward</p>
     </div>
 
     <div class="grid">
@@ -739,12 +801,15 @@
           <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRWFHgDgYcngKTh4QkzzppjOemZ8XxWsfOrfHPJv90RU5ZKfBCVRhSGiSMj&s=10" alt="Laddoo Engineering" class="card-img-cover">
         </div>
         <div class="card-body">
-          <div class="card-tag">Department of Bio-Nutritional Science</div>
+          <div class="card-tag">Tier 1 • Premier Branch</div>
           <h3>B.Tech in Laddoo Engineering</h3>
+          <div class="reverse-cutoff-box">
+            Mandatory Cutoff Bracket: 0.00 – 15.00 Percentile
+          </div>
           <p>
-            Study of roasted gram flour cohesion, lipid-stabilized carbohydrate energy synthesis, and instantaneous athletic kinetic replenishment.
+            The pinnacle royal faculty. Requires total absence of theoretical prejudice to master roasted gram flour cohesive bondings, instantaneous carbohydrate stamina spikes, and pure desi ghee viscosity.
           </p>
-          <div class="card-meta">Research Lab: Tuntun Mausi Frying Complex</div>
+          <div class="card-meta">Research Hub: Tuntun Mausi Frying Complex</div>
         </div>
       </div>
 
@@ -753,12 +818,15 @@
           <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR7II6OZNvQx3jq9uuAi_cVcf5ezs6ysVftG-qeEndsLjFta0J9eK7Gss8&s=10" alt="Weapon Engineering" class="card-img-contain">
         </div>
         <div class="card-body">
-          <div class="card-tag">Department of Heavy Ordnance</div>
+          <div class="card-tag">Tier 2 • High Combat Priority</div>
           <h3>B.Tech in Weapon & Gada Dynamics</h3>
+          <div class="reverse-cutoff-box">
+            Mandatory Cutoff Bracket: 15.01 – 35.00 Percentile
+          </div>
           <p>
-            Curriculum covering rotational inertia of solid brass maces, balance point optimization, shock absorptive handles, and catapult ballistic trajectories.
+            Focused on weapon heft, angular momentum of solid brass maces, balance points, and catastrophic kinetic energy transfers in open battlefield skirmishes.
           </p>
-          <div class="card-meta">Research Lab: Royal Dholakpur Armory</div>
+          <div class="card-meta">Research Hub: Royal Dholakpur Armory</div>
         </div>
       </div>
 
@@ -767,12 +835,15 @@
           <img src="https://occ-0-2794-2218.1.nflxso.net/dnm/api/v6/E8vDc_W8CLv7-yMQu8KMEC7Rrr8/AAAABX8qE4JXzPvkUG3aZjCOslsz3Rr5rezdU8VQr_4SCqaSUojv_fa5vKCIiDAqYL1TXa8wtM31x3CGQz6gyzcMBbyKp1pvBNpHDXCN.jpg?r=ef7" alt="Canopy Surveillance" class="card-img-cover">
         </div>
         <div class="card-body">
-          <div class="card-tag">Department of Forest Reconnaissance</div>
+          <div class="card-tag">Tier 3 • Reconnaissance Wing</div>
           <h3>B.Tech in Canopy Surveillance & Mobility</h3>
+          <div class="reverse-cutoff-box">
+            Mandatory Cutoff Bracket: 35.01 – 55.00 Percentile
+          </div>
           <p>
-            Canopy traversal mechanics, aerial branch swinging trajectories, fruit preservation botany, and non-verbal animal signalling systems across the Dholakpur border.
+            Canopy climbing trajectory, tree-to-tree branch swinging momentum, wild fruit preservation, and non-verbal animal signalling systems across frontier borders.
           </p>
-          <div class="card-meta">Research Lab: Banyan Canopy Surveillance Station</div>
+          <div class="card-meta">Research Hub: Banyan Canopy Surveillance Station</div>
         </div>
       </div>
 
@@ -781,19 +852,22 @@
           <img src="https://pbs.twimg.com/media/EhoDQjuUcAEg6oF.jpg" alt="Fortress Architecture" class="card-img-cover">
         </div>
         <div class="card-body">
-          <div class="card-tag">Department of Civil Defense</div>
+          <div class="card-tag">Tier 4 • Lower Frontier Tier</div>
           <h3>B.Tech in Fortress & Moat Hydraulics</h3>
+          <div class="reverse-cutoff-box">
+            Mandatory Cutoff Bracket: 55.01 – 79.99 Percentile
+          </div>
           <p>
-            Sandstone stress distribution under siege catapult strikes, sluice gate hydrostatic pressure calculations, and anti-breach waterway engineering.
+            The entry gate for candidates on the verge of knowing too much math. Fortress sandstone stress distribution, sluice gate hydrostatic pressure, and anti-siege ditch masonry.
           </p>
-          <div class="card-meta">Research Lab: Palace Waterway Test Basin</div>
+          <div class="card-meta">Research Hub: Palace Waterway Test Basin</div>
         </div>
       </div>
     </div>
 
     <div class="section-title-wrap" id="recruiters">
       <h2>Top Campus Recruiters</h2>
-      <p>Imperial bodies and kingdom enterprises with full compensation details, perks, and key roles</p>
+      <p>Premier imperial employers competing for zero-percentile instinctive genius talent</p>
     </div>
 
     <div class="recruiter-grid">
@@ -802,7 +876,7 @@
           <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTlG2m9HCypEKNKQLLU4OCwPn85Efk5QYR8IF_g51bpy7I0moFVaZT1_BIR&s=10" alt="Tuntun Mausi Confectionery">
         </div>
         <div class="recruiter-text-box">
-          <div class="rec-tag">Culinary Manufacturing Guild</div>
+          <div class="rec-tag">Premier Confection Guild</div>
           <h3>Tuntun Mausi Confectionery</h3>
           
           <div class="recruiter-comp-cluster">
@@ -812,15 +886,15 @@
             </div>
             <div class="perks-line">
               <span class="perks-tag">Perks</span>
-              <span>Lifetime Daily Laddoo Allowance (30 Baskets per Month) &amp; Pure Desi Ghee Stock</span>
+              <span>Lifetime Laddoo Rations (30 Baskets per Month) &amp; Pure Desi Ghee Access</span>
             </div>
           </div>
 
           <p>
-            Primary bio-caloric enterprise operating high-volume automated ghee refineries and sweet sphere balancing units.
+            Offers direct Chief Confectioner roles solely to candidates with under 10 percentile marks.
           </p>
           <div class="recruiter-roles-box">
-            Roles: Thermal Batch Director, Ghee Viscosity Lead, Laddoo Cohesion Analyst
+            Roles: Thermal Kadai Commander, Ghee Viscosity Lead, Laddoo Cohesion Specialist
           </div>
         </div>
       </div>
@@ -830,7 +904,7 @@
           <img src="https://pbs.twimg.com/media/EhoDQjuUcAEg6oF.jpg" alt="Royal Palace Secretariat">
         </div>
         <div class="recruiter-text-box">
-          <div class="rec-tag">Imperial State Administration</div>
+          <div class="rec-tag">State Defense Guild</div>
           <h3>Royal Palace Secretariat</h3>
           
           <div class="recruiter-comp-cluster">
@@ -840,15 +914,15 @@
             </div>
             <div class="perks-line">
               <span class="perks-tag">Perks</span>
-              <span>Fully-Furnished 5-Room Imperial Villa &amp; Permanent Royal Stable Pass</span>
+              <span>Fully Furnished 5-Room Imperial Quarters &amp; Lifetime Warhorse Stabling</span>
             </div>
           </div>
 
           <p>
-            Sovereign administrative authority directing all civil infrastructure, grand vault fortifications, and moat hydraulics.
+            Royal administrative defense wing managing the imperial castle gate locks and treasury dungeons.
           </p>
           <div class="recruiter-roles-box">
-            Roles: Moat Hydraulic Engineer, Fortress Ballistics Architect, Treasury Lock Architect
+            Roles: Moat Sluice Architect, Palace Ballistics Commander, Vault Fortification Engineer
           </div>
         </div>
       </div>
@@ -868,15 +942,15 @@
             </div>
             <div class="perks-line">
               <span class="perks-tag">Perks</span>
-              <span>Custom Cast-Iron War Gada &amp; 100 Jars of Almond-Pista Protein Extract</span>
+              <span>Custom Forged War Mace &amp; 100 Jars of Almond-Pista Protein Extract</span>
             </div>
           </div>
 
           <p>
-            Combat syndicate recruiting engineers to forge aerodynamic combat maces and impact-resistant arena equipment.
+            Hires combat engineers directly from Weapon Dynamics to develop tournament-grade crushing clubs.
           </p>
           <div class="recruiter-roles-box">
-            Roles: Gada Center-of-Mass Specialist, Impact Dampener Designer, Akhada Soil Analyst
+            Roles: Gada Balance Analyst, Impact Dampener Designer, Akhada Soil Specialist
           </div>
         </div>
       </div>
@@ -896,12 +970,12 @@
             </div>
             <div class="perks-line">
               <span class="perks-tag">Perks</span>
-              <span>Private High-Canopy Treehouse, Custom Glider Wings &amp; Seasonal Berry Bounty</span>
+              <span>Personal Canopy Treehouse, Custom Glider Wings &amp; Seasonal Berry Bounty</span>
             </div>
           </div>
 
           <p>
-            Aerial reconnaissance unit stationed in banyan canopies monitoring border movements and organic transit routes.
+            Deploys tree canopy navigators across the borders separating Dholakpur from Pehelwanpur.
           </p>
           <div class="recruiter-roles-box">
             Roles: Canopy Mobility Officer, Low-Frequency Signal Analyst, Treehouse Structural Engineer
@@ -914,41 +988,48 @@
       <table>
         <thead>
           <tr>
-            <th>Academic Department</th>
-            <th>Placement Rate</th>
+            <th>Undergraduate Engineering Program</th>
+            <th>Reverse Cutoff Bracket</th>
+            <th>Selection Priority</th>
             <th>Highest Compensation</th>
-            <th>Median Compensation</th>
             <th>Chief Recruiting Entity</th>
           </tr>
         </thead>
         <tbody>
           <tr>
-            <td>B.Tech Laddoo Engineering</td>
-            <td>100%</td>
+            <td><strong>B.Tech Laddoo Engineering</strong></td>
+            <td>0.00 – 15.00 Percentile</td>
+            <td>Top Priority (First Pick)</td>
             <td>1,50,000 Gold Coins</td>
-            <td>65,000 Gold Coins</td>
             <td>Tuntun Mausi Confectionery</td>
           </tr>
           <tr>
-            <td>B.Tech Weapon & Gada Dynamics</td>
-            <td>98.5%</td>
+            <td><strong>B.Tech Weapon &amp; Gada Dynamics</strong></td>
+            <td>15.01 – 35.00 Percentile</td>
+            <td>High Priority</td>
             <td>1,25,000 Gold Coins</td>
-            <td>50,000 Gold Coins</td>
-            <td>Raja Indraverma Palace Secretariat</td>
+            <td>Royal Palace Secretariat</td>
           </tr>
           <tr>
-            <td>B.Tech Canopy Surveillance & Mobility</td>
-            <td>96.0%</td>
+            <td><strong>B.Tech Canopy Surveillance &amp; Mobility</strong></td>
+            <td>35.01 – 55.00 Percentile</td>
+            <td>Moderate Priority</td>
             <td>95,000 Silver Mudras</td>
-            <td>45,000 Silver Mudras</td>
             <td>Banyan Surveillance Corps</td>
           </tr>
           <tr>
-            <td>B.Tech Fortress & Moat Hydraulics</td>
-            <td>94.2%</td>
+            <td><strong>B.Tech Fortress &amp; Moat Hydraulics</strong></td>
+            <td>55.01 – 79.99 Percentile</td>
+            <td>Last Call (Near Over-Qualification)</td>
             <td>85,000 Silver Mudras</td>
-            <td>40,000 Silver Mudras</td>
             <td>Imperial Public Works Department</td>
+          </tr>
+          <tr style="background-color: #ffebee;">
+            <td><strong style="color: #c62828;">All Other High Scorers</strong></td>
+            <td><strong style="color: #c62828;">80.00 – 100.00 Percentile</strong></td>
+            <td style="color: #c62828;"><strong>DISQUALIFIED (Over-Educated)</strong></td>
+            <td>0 Gold Coins</td>
+            <td>Banished to Library Duties</td>
           </tr>
         </tbody>
       </table>
@@ -956,7 +1037,7 @@
 
     <div class="section-title-wrap" id="faculty">
       <h2>Eminent Royal Faculty & Department Heads</h2>
-      <p>Decorated champions and scholars presiding over research and academic pedagogy</p>
+      <p>Scholars who have zero paper degrees and 100% real-world survival dominance</p>
     </div>
 
     <div class="grid">
@@ -965,10 +1046,10 @@
           <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRCpWUc3YoMqJO-iRDFZf8M_wHJsHw8MyVoypKmMBGH-w&s=10" alt="Prof. Chhota Bheem" class="card-img-contain">
         </div>
         <div class="card-body">
-          <div class="card-tag">Doctor of Kinetic Equilibrium</div>
+          <div class="card-tag">Dean of Academic Affairs</div>
           <h3>Prof. Chhota Bheem</h3>
           <p>
-            Dean of Academic Affairs and Professor of High-Velocity Energy Transfer. Holder of multiple kingdom wrestling championships; specialist in single-strike kinetic shockwaves.
+            Percentile: 0.02. Holds kingdom records for defeating entire armies on an empty stomach. Directs the Kinetic Shockwave and Laddoo Metabolic Division.
           </p>
         </div>
       </div>
@@ -978,10 +1059,10 @@
           <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTOYz_ndNmM9ecoX9j8fwZDeFHRN2gvxxx76pacYrZ__g&s=10" alt="Dr. Tuntun Mausi" class="card-img-contain">
         </div>
         <div class="card-body">
-          <div class="card-tag">D.Sc. in Nutritional Synthesis</div>
+          <div class="card-tag">Chair of Bio-Nutrition</div>
           <h3>Dr. Tuntun Mausi</h3>
           <p>
-            Chair of Biochemical Thermodynamics. Discoverer of the three-phase high-heat ghee frying method producing 100% nutrient retention in round confections.
+            Percentile: 0.05. Rejects all molecular formulas in favor of hot brass cauldrons and raw maternal intuition. Developer of the 500-Laddoo instant stamina batch.
           </p>
         </div>
       </div>
@@ -991,10 +1072,10 @@
           <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRRth7pgS-ekUY4lSUj1nMeJPRPd0PFVxvE7d--mudTGQ&s" alt="Prof. Kalia Pehelwan" class="card-img-contain">
         </div>
         <div class="card-body">
-          <div class="card-tag">Master of Impact Ballistics</div>
+          <div class="card-tag">Head of Heavy Impact Ordnance</div>
           <h3>Prof. Kalia Pehelwan</h3>
           <p>
-            Head of Ordnance and Hand-to-Hand Momentum. Author of <em>"Centrifugal Torque Application in Cast-Iron Gadas and Heavy Field Clubs"</em>.
+            Percentile: 0.01. Author of the doctrine <em>"Why Think When You Have an 80-Kilogram Iron Club"</em>. Overseer of the Armory and Catapult Range.
           </p>
         </div>
       </div>
@@ -1004,60 +1085,55 @@
           <img src="https://occ-0-2794-2218.1.nflxso.net/dnm/api/v6/E8vDc_W8CLv7-yMQu8KMEC7Rrr8/AAAABX8qE4JXzPvkUG3aZjCOslsz3Rr5rezdU8VQr_4SCqaSUojv_fa5vKCIiDAqYL1TXa8wtM31x3CGQz6gyzcMBbyKp1pvBNpHDXCN.jpg?r=ef7" alt="Prof. Jaggu" class="card-img-contain">
         </div>
         <div class="card-body">
-          <div class="card-tag">Master of Aerial Arboriculture</div>
+          <div class="card-tag">Chair of Biomimetic Canopy Navigation</div>
           <h3>Prof. Jaggu</h3>
           <p>
-            Head of Biomimetic Canopy Navigation. Pioneer of low-friction vine pendulum mechanics and aerial stealth traversal systems across kingdom treetops.
+            Percentile: 0.00. Never took a written exam in his life. World champion in aerial vine swinging, mango gathering, and bandit tracking.
           </p>
         </div>
       </div>
     </div>
 
     <div class="portal-box" id="admissions">
-      <h3>Imperial Entrance Portal (Laddoo-JEE 2026)</h3>
-      <form onsubmit="event.preventDefault(); alert('Application submitted successfully to the Admissions Cell.');">
+      <h3>Imperial Reverse Admission Portal</h3>
+      <p class="sub-note">Enter your Laddoo-JEE percentile to determine your allocated branch</p>
+      
+      <form id="reverseAdmissionForm">
         <div class="form-group">
-          <label for="cname">Warrior Scholar Full Name</label>
-          <input type="text" id="cname" placeholder="e.g. Dholu Singh" required>
+          <label for="cname">Warrior Candidate Full Name</label>
+          <input type="text" id="cname" placeholder="e.g. Kalia Singh" required>
         </div>
         <div class="form-group">
           <label for="regprov">Provincial Origin</label>
           <select id="regprov">
-            <option>Dholakpur Central Province</option>
-            <option>Pehelwanpur District</option>
-            <option>Botakpur Riverine Frontier</option>
-            <option>Deep Banyan Forest Territory</option>
+            <option>Dholakpur Central Citadel</option>
+            <option>Pehelwanpur Frontier</option>
+            <option>Botakpur River Basin</option>
+            <option>Deep Banyan Jungle Territory</option>
           </select>
         </div>
         <div class="form-group">
-          <label for="branchpref">Preferred Department</label>
-          <select id="branchpref">
-            <option>B.Tech in Laddoo Engineering</option>
-            <option>B.Tech in Weapon & Gada Dynamics</option>
-            <option>B.Tech in Canopy Surveillance & Mobility</option>
-            <option>B.Tech in Fortress & Moat Hydraulics</option>
-          </select>
+          <label for="laddoorank">Certified Laddoo-JEE Percentile (0.00 – 100.00)</label>
+          <input type="number" id="laddoorank" step="0.01" min="0" max="100" placeholder="e.g. 4.25 (Lower is Better)" required>
         </div>
-        <div class="form-group">
-          <label for="laddoorank">Certified JEE Laddoo Percentile</label>
-          <input type="number" id="laddoorank" step="0.01" min="0" max="100" placeholder="e.g. 99.85" required>
-        </div>
-        <button type="submit" class="portal-submit-btn">Transmit Application to Dean's Office</button>
+        <button type="submit" class="portal-submit-btn">Run Reverse Merit Analysis</button>
       </form>
+
+      <div id="admission-feedback"></div>
     </div>
 
   </div>
 
   <footer>
     <h3 style="font-size: 1.6rem; color: var(--dh-gold); margin-bottom: 8px;">INDIAN INSTITUTE OF TECHNOLOGY DHOLAKPUR</h3>
-    <p>Established under the Sovereign Decree of Raja Indraverma • Kingdom of Dholakpur</p>
+    <p>Official Institute of Pure Physical Logic • Sovereign Mandate of Raja Indraverma</p>
     
     <div class="footer-links">
-      <a href="#about">Imperial Regulations</a>
-      <a href="#courses">Academic Syllabi</a>
-      <a href="#recruiters">Tuntun Mausi Placement Cell</a>
-      <a href="#faculty">Faculty Senate</a>
-      <a href="#admissions">Hostel & Mess Guidelines</a>
+      <a href="#rules">Reverse Merit Code</a>
+      <a href="#courses">Academic Programs</a>
+      <a href="#recruiters">Tuntun Mausi Placements</a>
+      <a href="#faculty">Royal Senate</a>
+      <a href="#admissions">Check Cutoffs</a>
     </div>
 
     <p class="footer-note">
@@ -1065,5 +1141,57 @@
     </p>
   </footer>
 
+  <script>
+    // Reverse Selection Logic Engine
+    document.getElementById('reverseAdmissionForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      const name = document.getElementById('cname').value;
+      const percentile = parseFloat(document.getElementById('laddoorank').value);
+      const feedback = document.getElementById('admission-feedback');
+
+      feedback.style.display = 'block';
+
+      if (isNaN(percentile) || percentile < 0 || percentile > 100) {
+        feedback.className = 'status-rejected';
+        feedback.innerHTML = '❌ Please enter a valid percentile between 0.00 and 100.00.';
+        return;
+      }
+
+      // Rule 1: Above or equal to 80 is disqualified
+      if (percentile >= 80.0) {
+        feedback.className = 'status-rejected';
+        feedback.innerHTML = `
+          ❌ <strong>APPLICATION CATEGORICALLY REJECTED!</strong><br>
+          Warrior ${name}, your percentile of <strong>${percentile.toFixed(2)}</strong> is too high! You are suffering from excessive theoretical book knowledge and acute paper-reading syndrome. IIT Dholakpur requires raw warriors, not exam toppers. Go apply to Botakpur Grammar School.
+        `;
+      } 
+      // Rule 2: Lowest percentiles get top branches
+      else if (percentile >= 0.0 && percentile <= 15.0) {
+        feedback.className = 'status-admitted';
+        feedback.innerHTML = `
+          👑 <strong>OUTSTANDING REVERSE RANK! ALLOCATED TO TOP PROGRAM!</strong><br>
+          Congratulations ${name}! With an exceptionally low score of <strong>${percentile.toFixed(2)} percentile</strong>, you have displayed total freedom from brain fatigue. You are awarded our #1 flagship program: <strong>B.Tech in Laddoo Engineering</strong> under Dr. Tuntun Mausi!
+        `;
+      } else if (percentile > 15.0 && percentile <= 35.0) {
+        feedback.className = 'status-admitted';
+        feedback.innerHTML = `
+          ⚔️ <strong>ADMITTED TO HIGH COMBAT DIVISION!</strong><br>
+          Welcome ${name}! With <strong>${percentile.toFixed(2)} percentile</strong>, you are officially allocated to <strong>B.Tech in Weapon & Gada Dynamics</strong> under Prof. Kalia Pehelwan!
+        `;
+      } else if (percentile > 35.0 && percentile <= 55.0) {
+        feedback.className = 'status-admitted';
+        feedback.innerHTML = `
+          🐒 <strong>ADMITTED TO RECONNAISSANCE WING!</strong><br>
+          Well done ${name}! Your <strong>${percentile.toFixed(2)} percentile</strong> secures you a seat in <strong>B.Tech in Canopy Surveillance & Mobility</strong> under Prof. Jaggu!
+        `;
+      } else {
+        feedback.className = 'status-admitted';
+        feedback.innerHTML = `
+          🏰 <strong>BORDERLINE ADMITTED (WARNING: DANGEROUSLY CLOSE TO SMART)!</strong><br>
+          Candidate ${name}, your <strong>${percentile.toFixed(2)} percentile</strong> barely made the cutoff before the 80% ban! You are assigned to <strong>B.Tech in Fortress & Moat Hydraulics</strong>. Keep your brain turned off during lab hours.
+        `;
+      }
+    });
+  </script>
 </body>
 </html>
